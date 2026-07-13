@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Biblioteca do Homem Respeitado — 10 livros por R$ 29,90</title>
+<meta name="description" content="Dez livros sobre presença, disciplina, atração e caráter. A coleção completa por R$ 29,90.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0A0B; --ink-2:#111113; --ink-3:#191A1D;
+  --paper:#EDE9E1; --dim:#9A958A;
+  --line:#26262A; --gold:#B8960C; --gold-lt:#D9B942;
+  --r:2px; --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:100px 0;position:relative}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.012em}
+h1{font-size:clamp(34px,6vw,60px)}
+h2{font-size:clamp(27px,4.1vw,40px)}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:20px}
+.lede{color:var(--dim);font-size:clamp(16px,2vw,19px);max-width:56ch}
+.rule{height:1px;background:var(--line);position:relative}
+.rule::after{content:"";position:absolute;left:50%;top:-.5px;transform:translateX(-50%);width:64px;height:2px;background:var(--gold)}
+.rule-p{height:1px;background:var(--line)}
+
+nav{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(10,10,11,.72);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s}
+nav.on{border-bottom-color:var(--line)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:600}
+.brand b{color:var(--paper);font-weight:600}
+.nav-cta{font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--ink);background:var(--gold);padding:9px 18px;border-radius:var(--r);text-decoration:none;white-space:nowrap;transition:.2s}
+.nav-cta:hover{background:var(--gold-lt)}
+
+/* HERO */
+.hero{padding:140px 0 0;text-align:center}
+.hero-mark{width:1px;height:52px;background:linear-gradient(180deg,transparent,var(--gold));margin:0 auto 28px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{margin:24px auto 0}
+.fan{display:flex;justify-content:center;align-items:center;margin:60px auto 0;padding-bottom:8px}
+.fan .cv{width:132px;flex:none;margin-left:-46px;border-radius:2px;overflow:hidden;
+  box-shadow:0 24px 50px rgba(0,0,0,.72);border:1px solid rgba(184,150,12,.3);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.fan .cv:first-child{margin-left:0}
+.fan .cv:hover{transform:translateY(-18px) scale(1.04);z-index:5;position:relative}
+@media(max-width:900px){.fan .cv{width:92px;margin-left:-34px}}
+@media(max-width:560px){.fan{padding:0 6px}.fan .cv{width:62px;margin-left:-24px}}
+
+.price{margin:56px auto 0;display:flex;flex-direction:column;align-items:center;gap:2px}
+.price .was{color:var(--dim);font-size:15px;text-decoration:line-through;text-decoration-color:var(--gold)}
+.price .now{font-family:'Fraunces',serif;font-size:clamp(46px,8vw,66px);font-weight:700;letter-spacing:-.02em;line-height:1}
+.price .now span{font-size:.44em;vertical-align:.6em;color:var(--gold);margin-right:3px}
+.price .cap{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:10px}
+.cta{display:inline-block;margin-top:28px;background:var(--gold);color:var(--ink);font-weight:600;font-size:16px;padding:19px 42px;border-radius:var(--r);text-decoration:none;transition:transform .18s,background .18s,box-shadow .18s}
+.cta:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,150,12,.22)}
+.trust{margin-top:22px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;font-size:12.5px;color:var(--dim)}
+.trust span{display:inline-flex;align-items:center;gap:7px}
+.trust i{width:4px;height:4px;background:var(--gold);border-radius:50%;flex:none}
+.hero-pad{height:100px}
+
+/* DOR */
+.pain{background:var(--ink-2)}
+.pain ul{margin-top:34px;max-width:660px}
+.pain li{list-style:none;padding:18px 0 18px 34px;position:relative;border-bottom:1px solid var(--line);color:#CFCAC0}
+.pain li:last-child{border-bottom:0}
+.pain li::before{content:"";position:absolute;left:4px;top:28px;width:10px;height:1px;background:var(--gold)}
+.pain .close{margin-top:32px;font-family:'Fraunces',serif;font-size:21px;line-height:1.45;max-width:52ch}
+
+/* LIVROS */
+.books{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:840px){.books{grid-template-columns:1fr}}
+.book{background:var(--ink);padding:26px;display:flex;gap:22px;align-items:flex-start;transition:background .25s}
+.book:hover{background:var(--ink-3)}
+.book .th{width:80px;flex:none;border:1px solid rgba(184,150,12,.22);border-radius:1px;overflow:hidden}
+.book .n{font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:600;display:block;margin-bottom:7px}
+.book h3{font-size:19px;line-height:1.25;margin-bottom:8px}
+.book p{font-size:14.5px;color:var(--dim);line-height:1.55}
+
+/* VOZES */
+.voices{background:var(--ink-2)}
+.vgrid{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:880px){.vgrid{grid-template-columns:1fr}}
+.voice{border-left:1px solid var(--gold);padding:2px 0 2px 22px}
+.voice p{font-family:'Fraunces',serif;font-size:18px;line-height:1.5;color:#DBD6CC}
+.voice cite{display:block;margin-top:16px;font-style:normal;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+
+/* VALOR */
+.sv{margin-top:46px;max-width:660px}
+.sv .row{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.sv .row span:last-child{color:var(--dim);white-space:nowrap;font-variant-numeric:tabular-nums}
+.sv .tot{display:flex;justify-content:space-between;gap:18px;padding:22px 0 0;font-size:17px;font-weight:600}
+.sv .tot span:last-child{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--gold)}
+.today{margin-top:38px;border:1px solid var(--gold);padding:34px 28px;text-align:center;border-radius:var(--r);background:linear-gradient(180deg,rgba(184,150,12,.07),transparent)}
+.today .k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.today .v{font-family:'Fraunces',serif;font-size:clamp(40px,7vw,58px);font-weight:700;line-height:1.1;margin-top:8px}
+.today .v span{font-size:.44em;vertical-align:.6em;color:var(--gold);margin-right:3px}
+
+/* URGÊNCIA */
+.urg{background:var(--ink-2);text-align:center}
+.urg .lede{margin:20px auto 0}
+.clock{margin-top:32px;display:inline-flex;gap:10px}
+.clock div{min-width:76px;border:1px solid var(--line);padding:14px 10px;border-radius:var(--r);background:var(--ink)}
+.clock b{display:block;font-family:'Fraunces',serif;font-size:30px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.clock small{display:block;margin-top:6px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+
+/* GARANTIA */
+.guar{text-align:center}
+.guar .seal{width:56px;height:56px;margin:0 auto 24px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:700;color:var(--gold);font-size:17px}
+.guar p{max-width:56ch;margin:20px auto 0;color:var(--dim)}
+
+/* FINAL */
+.final{text-align:center;background:var(--ink-2)}
+.final h2{max-width:20ch;margin:0 auto}
+.final .lede{margin:22px auto 0}
+
+footer{padding:44px 0;text-align:center;font-size:12.5px;color:#5C5952;line-height:1.8}
+footer b{color:var(--dim);font-weight:500}
+
+.dock{position:fixed;inset:auto 0 0 0;z-index:70;display:none;background:rgba(10,10,11,.95);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:12px 16px;align-items:center;justify-content:space-between;gap:12px}
+.dock .p{font-family:'Fraunces',serif;font-weight:700;font-size:22px;line-height:1}
+.dock .p small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+.dock a{background:var(--gold);color:var(--ink);font-weight:600;font-size:14px;padding:14px 24px;border-radius:var(--r);text-decoration:none;white-space:nowrap}
+@media(max-width:760px){section{padding:76px 0}.hero{padding:124px 0 0}.hero-pad{height:76px}.dock{display:flex}body{padding-bottom:78px}.nav-cta{display:none}.clock div{min-width:66px}}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.cta:hover,.fan .cv:hover{transform:none}}
+:focus-visible{outline:2px solid var(--gold-lt);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <div class="brand">@<b>homemrespeitadobr</b></div>
+    <a href="#comprar" class="nav-cta">Quero a coleção — R$ 29,90</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-mark"></div>
+    <p class="eyebrow">A biblioteca do homem respeitado</p>
+    <h1>Dez livros sobre a única coisa<br>que você realmente <em>controla</em>.</h1>
+    <p class="lede">Presença. Disciplina. Atração. Caráter. Escritos sem rodeio, sem guru e sem promessa fácil — feitos para ler no celular, em qualquer lugar.</p>
+    <div class="fan" id="fan"></div>
+    <div class="price">
+      <span class="was">De R$ 270,00</span>
+      <span class="now"><span>R$</span>29,90</span>
+      <span class="cap">A coleção completa · 10 livros</span>
+    </div>
+    <a href="#comprar" class="cta">Quero os 10 livros agora</a>
+    <div class="trust">
+      <span><i></i>Pagamento seguro</span>
+      <span><i></i>Acesso imediato</span>
+      <span><i></i>PDF feito para celular</span>
+    </div>
+  </div>
+  <div class="hero-pad"></div>
+</header>
+
+<div class="rule"></div>
+
+<section class="pain">
+  <div class="wrap rv">
+    <p class="eyebrow">Antes de qualquer coisa</p>
+    <h2>Você reconhece algum desses padrões?</h2>
+    <ul>
+      <li>Você faz tudo certo — e mesmo assim ela some.</li>
+      <li>Você é um cara bom, e por isso ninguém te leva a sério.</li>
+      <li>Você sabe exatamente o que precisa fazer. E não faz.</li>
+      <li>Sua semana passa e você não lembra de um único dia dela.</li>
+      <li>Você sente que poderia ser mais. Só não sabe por onde começar.</li>
+    </ul>
+    <p class="close">Se marcou pelo menos um, esses livros foram escritos pra você — e provavelmente vão incomodar antes de ajudar.</p>
+  </div>
+</section>
+
+<div class="rule-p"></div>
+
+<section id="livros">
+  <div class="wrap rv">
+    <p class="eyebrow">O que você leva</p>
+    <h2>Dez livros. Dez problemas resolvidos.</h2>
+    <div class="books" id="books"></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section class="voices">
+  <div class="wrap rv">
+    <p class="eyebrow">Quem já leu</p>
+    <h2>O que dizem os leitores</h2>
+    <div class="vgrid">
+      <blockquote class="voice">
+        <p>Comprei achando que era mais do mesmo. Li <em>A Morte do Personagem</em> numa noite e no dia seguinte tomei uma decisão que eu adiava há dois anos.</p>
+        <cite>Gabriel M. · 24 anos · São Paulo</cite>
+      </blockquote>
+      <blockquote class="voice">
+        <p>O livro sobre atração me mostrou onde eu errava em todos os relacionamentos. Direto, sem enrolação, sem terapia barata.</p>
+        <cite>Rodrigo F. · 31 anos · Belo Horizonte</cite>
+      </blockquote>
+      <blockquote class="voice">
+        <p>Trinta dias seguindo o protocolo. Acordei cedo um mês inteiro pela primeira vez na vida. Melhor investimento do ano.</p>
+        <cite>Lucas T. · 27 anos · Recife</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<div class="rule-p"></div>
+
+<section id="comprar">
+  <div class="wrap rv">
+    <p class="eyebrow">A conta</p>
+    <h2>Vendidos separados, sairiam por R$ 270.</h2>
+    <div class="sv" id="sv"></div>
+    <div class="today">
+      <div class="k">Hoje, a coleção inteira</div>
+      <div class="v"><span>R$</span>29,90</div>
+      <a href="{{KIWIFY_CHECKOUT_URL}}" class="cta" id="buy">Comprar agora — acesso imediato</a>
+      <div class="trust">
+        <span><i></i>Pagamento seguro</span>
+        <span><i></i>Garantia de 7 dias</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule-p"></div>
+
+<section class="urg">
+  <div class="wrap rv">
+    <p class="eyebrow">Preço de lançamento</p>
+    <h2>Isso não fica assim para sempre.</h2>
+    <p class="lede">R$ 29,90 é o valor de lançamento da coleção. Quando essa janela fechar, cada livro volta a ser vendido pelo preço individual.</p>
+    <div class="clock">
+      <div><b id="h">23</b><small>Horas</small></div>
+      <div><b id="m">59</b><small>Min</small></div>
+      <div><b id="s">59</b><small>Seg</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule-p"></div>
+
+<section class="guar">
+  <div class="wrap rv">
+    <div class="seal">7</div>
+    <p class="eyebrow">Garantia incondicional</p>
+    <h2>Sete dias para pedir o dinheiro de volta.</h2>
+    <p>Leia. Aplique. Se não valer cada centavo dos R$ 29,90, você pede reembolso e recebe de volta. Sem formulário, sem justificativa, sem constrangimento. O risco é meu.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section class="final">
+  <div class="wrap rv">
+    <p class="eyebrow">Última coisa</p>
+    <h2>Você pode fechar esta página.</h2>
+    <p class="lede">E amanhã acordar exatamente igual. Ou pode gastar R$ 29,90 — o preço de um lanche — e começar a mudar a única coisa que está de fato nas suas mãos.</p>
+    <a href="{{KIWIFY_CHECKOUT_URL}}" class="cta">Quero os 10 livros por R$ 29,90</a>
+    <div class="trust">
+      <span><i></i>Acesso imediato após o pagamento</span>
+      <span><i></i>Garantia de 7 dias</span>
+    </div>
+  </div>
+</section>
+
+<div class="rule-p"></div>
+
+<footer>
+  <div class="wrap">
+    <b>@homemrespeitadobr</b><br>
+    Entrega em PDF digital. O acesso é liberado logo após a confirmação do pagamento.<br>
+    © 2026 — Todos os direitos reservados.
+  </div>
+</footer>
+
+<div class="dock">
+  <div class="p">R$ 29,90<small>10 livros</small></div>
+  <a href="#comprar">Comprar</a>
+</div>
+
+<script>
+const CAPAS = ["assets/capas/1.jpg", "assets/capas/2.jpg", "assets/capas/3.jpg", "assets/capas/4.jpg", "assets/capas/5.jpg", "assets/capas/6.jpg", "assets/capas/7.jpg", "assets/capas/8.jpg", "assets/capas/9.jpg", "assets/capas/10.jpg"];
+const LIVROS = [
+  ["A Arte de Ser Indecifrável","Por que homens previsíveis são esquecidos — e como construir mistério real ao seu redor."],
+  ["A Morte do Personagem","O processo doloroso de parar de ser quem todos esperam que você seja."],
+  ["O Código do Homem Respeitado","Comportamento, postura e comunicação para ser respeitado em qualquer ambiente."],
+  ["O Código dos Antigos","Lições de samurais, espartanos, vikings e estoicos que o homem moderno esqueceu."],
+  ["30 Dias para se Tornar um Homem Dominante","O protocolo diário de reprogramação física, mental e energética."],
+  ["77 Verdades Que Nenhum Homem Te Falou","O livro que seu pai deveria ter te dado aos 18 anos."],
+  ["Faminto","A fome que constrói impérios — e como acordar a sua antes que seja tarde."],
+  ["O Lobo Solitário","O caminho do homem que aprendeu a viver sozinho e por isso se tornou perigoso."],
+  ["Por Que Mulheres Perdem o Interesse","Os 9 erros silenciosos que matam a atração — e como nunca mais cometê-los."],
+  ["Psicologia da Sombra Masculina","Como reconhecer, integrar e transformar a sombra em poder pessoal."]
+];
+
+const fan = document.getElementById('fan');
+LIVROS.forEach((l,i)=>{
+  const d=document.createElement('div'); d.className='cv';
+  d.innerHTML=`<img src="${CAPAS[i]}" alt="Capa — ${l[0]}">`;
+  fan.appendChild(d);
+});
+
+const books = document.getElementById('books');
+LIVROS.forEach((l,i)=>{
+  const a=document.createElement('article'); a.className='book';
+  a.innerHTML=`<div class="th"><img src="${CAPAS[i]}" alt="Capa — ${l[0]}" loading="lazy"></div>
+  <div><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${l[0]}</h3><p>${l[1]}</p></div>`;
+  books.appendChild(a);
+});
+
+const sv=document.getElementById('sv');
+LIVROS.forEach(l=>{
+  const r=document.createElement('div'); r.className='row';
+  r.innerHTML=`<span>${l[0]}</span><span>R$ 27,00</span>`; sv.appendChild(r);
+});
+const t=document.createElement('div'); t.className='tot';
+t.innerHTML='<span>Valor total</span><span>R$ 270,00</span>'; sv.appendChild(t);
+
+let left=24*3600-1; const p=n=>String(n).padStart(2,'0');
+setInterval(()=>{ if(left<=0) left=24*3600; left--;
+  h.textContent=p(Math.floor(left/3600)); m.textContent=p(Math.floor(left%3600/60)); s.textContent=p(left%60);
+},1000);
+
+addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('on',scrollY>24),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

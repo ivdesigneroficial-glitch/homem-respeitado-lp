@@ -43,18 +43,21 @@ nav.on{border-bottom-color:var(--line)}
 .hero-mark{width:1px;height:52px;background:linear-gradient(180deg,transparent,var(--gold));margin:0 auto 28px}
 .hero h1 em{font-style:normal;color:var(--gold)}
 .hero .lede{margin:24px auto 0}
-.fan{--w:158px;--step:100px;display:flex;justify-content:center;align-items:flex-end;margin:66px auto 0;padding:26px 0 14px;perspective:1500px}
-.fan .cv{width:var(--w);flex:none;margin-left:calc(var(--step) - var(--w));position:relative;
-  transform-origin:50% 100%;
-  transform:rotate(calc(var(--rot,0) * 1deg)) translateY(calc(var(--ty,0) * var(--w))) scale(var(--sc,1));
-  z-index:var(--z,1);border-radius:3px;overflow:hidden;
-  box-shadow:0 26px 54px rgba(0,0,0,.72);border:1px solid rgba(184,150,12,.32);
-  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;will-change:transform}
-.fan .cv:first-child{margin-left:0}
-.fan .cv:hover{transform:translateY(-22px) scale(1.09);z-index:20;
-  box-shadow:0 34px 70px rgba(0,0,0,.82),0 0 0 1px var(--gold-lt)}
-@media(max-width:900px){.fan{--w:112px;--step:74px}}
-@media(max-width:560px){.fan{--w:66px;--step:30px;padding:16px 0 8px}}
+.fan{--w:220px;--gap:26px;position:relative;width:100vw;margin:54px 0 0;margin-left:calc(50% - 50vw);
+  overflow:hidden;padding:26px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.fan .track{display:flex;width:max-content;animation:belt 40s linear infinite;will-change:transform}
+.fan:hover .track{animation-play-state:paused}
+.fan .cv{width:var(--w);flex:none;margin-right:var(--gap);border-radius:3px;overflow:hidden;
+  box-shadow:0 22px 48px rgba(0,0,0,.7);border:1px solid rgba(184,150,12,.3);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.fan .cv:hover{transform:translateY(-12px) scale(1.06);z-index:2;
+  box-shadow:0 32px 64px rgba(0,0,0,.82),0 0 0 1px var(--gold-lt)}
+@keyframes belt{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:900px){.fan{--w:170px;--gap:20px}}
+@media(max-width:560px){.fan{--w:132px;--gap:16px;padding:18px 0}}
+@media(prefers-reduced-motion:reduce){.fan .track{animation:none}}
 
 .price{margin:56px auto 0;display:flex;flex-direction:column;align-items:center;gap:2px}
 .price .was{color:var(--dim);font-size:15px;text-decoration:line-through;text-decoration-color:var(--gold)}
@@ -310,21 +313,20 @@ const LIVROS = [
 ];
 
 const fan = document.getElementById('fan');
-const N=LIVROS.length, mid=(N-1)/2;
-LIVROS.forEach((l,i)=>{
+const track=document.createElement('div'); track.className='track';
+function cover(l,i,dup){
   const d=document.createElement('div'); d.className='cv';
-  const dist=Math.abs(i-mid)/mid;      // 0 no centro → 1 nas pontas
-  const rot=((i-mid)/mid)*5;           // leque suave: -5°..+5°
-  const ty=dist*dist*0.16;             // arco: pontas descem, centro no topo
-  const sc=1+(1-dist)*0.05;            // centro levemente maior
-  const z=Math.round((1-dist)*10)+1;   // centro à frente
-  d.style.setProperty('--rot',rot.toFixed(2));
-  d.style.setProperty('--ty',ty.toFixed(3));
-  d.style.setProperty('--sc',sc.toFixed(3));
-  d.style.setProperty('--z',z);
-  d.innerHTML=`<img src="${CAPAS[i]}" alt="Capa — ${l[0]}">`;
-  fan.appendChild(d);
-});
+  const img=document.createElement('img'); img.src=CAPAS[i]; img.loading='eager';
+  if(dup){img.alt=''; d.setAttribute('aria-hidden','true');} else {img.alt='Capa — '+l[0];}
+  d.appendChild(img); return d;
+}
+// esteira rolante: a coleção + uma cópia, pra rodar em loop sem emenda
+LIVROS.forEach((l,i)=>track.appendChild(cover(l,i,false)));
+LIVROS.forEach((l,i)=>track.appendChild(cover(l,i,true)));
+fan.appendChild(track);
+// velocidade constante (~70px/s) em qualquer largura de tela
+function setBelt(){ const half=track.scrollWidth/2; if(half) track.style.animationDuration=Math.max(24,Math.round(half/70))+'s'; }
+setBelt(); addEventListener('resize',setBelt);
 
 const books = document.getElementById('books');
 LIVROS.forEach((l,i)=>{
